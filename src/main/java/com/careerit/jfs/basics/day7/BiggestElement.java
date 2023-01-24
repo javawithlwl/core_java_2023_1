@@ -32,9 +32,9 @@ public class BiggestElement {
 
   public static int biggest(int[] arr) {
     int big = arr[0];
-    for (int i = 1; i < arr.length; i++) {
-      if (big < arr[i]) {
-        big = arr[i];
+    for (int ele : arr) {
+      if (big < ele) {
+        big = ele;
       }
     }
     return big;
