@@ -19,11 +19,9 @@ public class BiggestElement {
   }
   public static int smallest(int[] arr) {
     int small = arr[0];
-    for (int ele : arr) {
-      if (small > ele) {
+    for (int ele : arr)
+      if (small > ele)
         small = ele;
-      }
-    }
     return small;
   }
 }
