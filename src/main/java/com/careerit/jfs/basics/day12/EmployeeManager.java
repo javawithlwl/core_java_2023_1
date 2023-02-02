@@ -5,14 +5,10 @@ public class EmployeeManager {
   public static void main(String[] args) {
 
     String data = "1001-Rajesh-97000-DEV,1002-Manoj-87000-DEV,2001-Mastan-57000-QA,3001-Ramu-57000-HR,3001-John-97000-QA";
-
     Employee[] arr = getEmployee(data);
-
     // Get max paid employee
     // Get max paid employee of given department
     // Get total salary of all employees
-
-
   }
 
   private static double totalSalary(Employee[] arr){
