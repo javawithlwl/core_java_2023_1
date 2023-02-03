@@ -10,14 +10,28 @@ public class EmployeeManager {
     // Get max paid employee of given department
     // Get total salary of all employees
   }
-
   private static double totalSalary(Employee[] arr){
-
     return 0;
   }
-  private static Employee getMaxPaidEmployee(String dept){
-      return null;
+  private static Employee getMaxPaidEmployee(Employee[] arr,String dept){
+        Employee[] temp = new Employee[arr.length];
+        int j=0;
+        for(int i=0;i<=arr.length;i++){
+            if(arr[i].getDept().equals(dept)){
+                temp[j++] = arr[i];
+            }
+        }
+        Employee[] deptEmp = new Employee[j];
+        System.arraycopy(temp,0,deptEmp,0,j);
+        double maxSalary = maxSalary(deptEmp);
+        // Logic
+        return null;
   }
+
+  private static double maxSalary(Employee[] deptEmp) {
+    return 0;
+  }
+
   private static Employee getMaxPaidEmployee(Employee[] arr){
       return null;
   }
