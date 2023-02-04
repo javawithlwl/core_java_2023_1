@@ -1,5 +1,7 @@
 package com.careerit.jfs.basics.day14.iplstat;
 
+import lombok.SneakyThrows;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,7 +14,8 @@ public class TeamService {
 
   private static List<TeamDetail> teamDetails;
 
-  public TeamService() throws Exception {
+  @SneakyThrows
+  public TeamService()  {
         teamDetails = loadFromCsv();
   }
 
