@@ -6,13 +6,20 @@ public class IplStatDriver {
 
   public static void main(String[] args) throws Exception {
 
-    TeamService teamService = new TeamService();
-    String team = "RCCB";
-    TeamDetail teamDetail = teamService.getTeamDetails(team);
-    if(teamDetail!=null) {
-      System.out.println(teamDetail.getTeam() + "-" + teamDetail.getName() + "-" + teamDetail.getCaptain());
-    }else{
-      System.out.println(team+" is not found, please check team label");
-    }
-    }
+    // Get team names
+    IplStatService service = new IplStatService();
+    List<String> teamNames = service.getTeamNames();
+    System.out.println(teamNames);
+
+    // Get player of given team
+
+    String team = "CSK";
+    List<Player> teamPlayers = service.getPlayersOf(team);
+    System.out.println("Team "+team+" has "+teamPlayers.size()+" players");
+
+    // Get team amount stats
+    List<TeamAmountDto> teamAmountList = service.getTeamAmountStats();
+    System.out.println(teamAmountList);
+
+  }
 }
