@@ -9,5 +9,6 @@ public class Employee {
 
   private String empno;
   private String ename;
+  private String countryCode;
   private double salary;
 }
