@@ -51,7 +51,5 @@ public class FunctionalInterfaceExample {
   public static void main(String[] args) {
     int mul = calculate(10, 5, (a,b)-> a * b);
     int sum = calculate(10, 5, (a,b)-> a + b);
-
-
   }
 }
