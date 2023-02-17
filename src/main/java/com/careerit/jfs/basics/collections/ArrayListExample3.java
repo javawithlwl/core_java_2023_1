@@ -1,6 +1,4 @@
 package com.careerit.jfs.basics.collections;
-
-import com.careerit.jfs.basics.day17.one.C;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,4 +50,5 @@ public class ArrayListExample3 {
 
     // show country and currency details
   }
+
 }
