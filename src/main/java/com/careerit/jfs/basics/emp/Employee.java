@@ -1,10 +1,12 @@
 package com.careerit.jfs.basics.emp;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Employee {
 
       private int empno;
