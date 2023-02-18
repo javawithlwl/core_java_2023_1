@@ -1,4 +1,4 @@
-package com.careerit.jfs.basics.collections;
+package com.careerit.jfs.basics.collections.list;
 
 import java.util.ArrayList;
 import java.util.Iterator;

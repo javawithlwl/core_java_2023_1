@@ -1,4 +1,4 @@
-package com.careerit.jfs.basics.collections;
+package com.careerit.jfs.basics.collections.list;
 
 import org.apache.commons.collections.CollectionUtils;
 
