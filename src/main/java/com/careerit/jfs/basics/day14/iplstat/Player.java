@@ -5,6 +5,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class Player {
 
   private String name;

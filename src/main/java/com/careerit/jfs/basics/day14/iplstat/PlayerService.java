@@ -24,7 +24,7 @@ public class PlayerService {
 
   private List<Player> loadPlayers() throws Exception {
     List<Player> list = new ArrayList<>();
-    Path path = new File(PlayerService.class.getResource("/players.csv").toURI()).toPath();
+    Path path = new File(PlayerService.class.getResource("/players_with_d.csv").toURI()).toPath();
     List<String> lines = Files.readAllLines(path);
     for (int i = 1; i < lines.size(); i++) {
       String[] arr = lines.get(i).split(",");
