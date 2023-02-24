@@ -14,4 +14,5 @@ public interface PlayerService {
        List<Player> getMaxPaidPlayers(String team,String role);
        List<String> getCountryNames();
        List<CountryStatsDto> getPlayerCountryStats();
+       List<Player> getPlayersSortAmount();
 }

@@ -1,0 +1,96 @@
+[
+  {
+      "serviceCode": "DATA_001",
+      "quantity": 5,
+      "amount"  : 1,
+      "totalAmount": 5
+  },
+  {
+    "serviceCode": "SMS_001",
+    "quantity": 10,
+    "amount"  : 0.01,
+    "totalAmount": 0.10
+  },
+  {
+    "serviceCode": "DATA_001",
+    "quantity": 5,
+    "amount"  : 1,
+    "totalAmount": 5
+  },
+  {
+    "serviceCode": "DATA_001",
+    "quantity": 5,
+    "amount"  : 1,
+    "totalAmount": 5
+  },{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "SMS_001",
+  "quantity": 100,
+  "amount"  : 0.01,
+  "totalAmount": 1
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "IST_001",
+  "quantity": 2,
+  "amount"  : 10,
+  "totalAmount": 20
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "IST_001",
+  "quantity": 5,
+  "amount"  : 20,
+  "totalAmount": 100
+},{
+  "serviceCode": "IST_001",
+  "quantity": 20,
+  "amount"  : 20,
+  "totalAmount": 200
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+},{
+  "serviceCode": "DATA_001",
+  "quantity": 5,
+  "amount"  : 1,
+  "totalAmount": 5
+}
+  ]

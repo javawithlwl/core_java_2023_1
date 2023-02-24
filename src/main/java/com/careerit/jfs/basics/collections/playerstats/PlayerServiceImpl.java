@@ -1,5 +1,8 @@
 package com.careerit.jfs.basics.collections.playerstats;
 
+import org.apache.commons.lang3.ObjectUtils;
+
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,4 +84,16 @@ public class PlayerServiceImpl implements PlayerService {
   public List<CountryStatsDto> getPlayerCountryStats() {
     return null;
   }
+
+  @Override
+  public List<Player> getPlayersSortAmount() {
+    List<Player> sortedList = players.stream()
+        .sorted(Comparator.comparing(Player::getAmount).reversed()
+                .thenComparing(Player::getName)
+            .thenComparing(Player::getCountry)
+         ).collect(Collectors.toList());
+    return sortedList;
+  }
+
+
 }
