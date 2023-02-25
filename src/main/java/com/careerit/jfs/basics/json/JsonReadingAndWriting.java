@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Builder
@@ -52,8 +53,14 @@ public class JsonReadingAndWriting {
               }
         """;
     JsonNode jsonNode = objectMapper.readTree(jsonData);
-    jsonNode.fieldNames().forEachRemaining(ele->{
-      System.out.println(ele+" "+jsonNode.get(ele));
+//    jsonNode.fieldNames().forEachRemaining(ele->{
+//      System.out.println(ele+" "+jsonNode.get(ele));
+//    });
+    TypeReference<Map<String,CurrencyDetails>> type = new TypeReference<Map<String, CurrencyDetails>>(){};
+    Map<String,CurrencyDetails> currencyData = objectMapper.readValue(JsonReadingAndWriting.class.getResourceAsStream("/currency_details.json"),type);
+    currencyData.entrySet().forEach(ele->{
+      System.out.println(ele.getValue() instanceof  CurrencyDetails);
     });
+
   }
 }
