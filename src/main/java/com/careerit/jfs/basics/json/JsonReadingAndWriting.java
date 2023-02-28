@@ -1,5 +1,7 @@
 package com.careerit.jfs.basics.json;
 
+import com.careerit.jfs.basics.collections.playerstats.CsvReaderUtil;
+import com.careerit.jfs.basics.collections.playerstats.Player;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -60,7 +62,10 @@ public class JsonReadingAndWriting {
     Map<String,CurrencyDetails> currencyData = objectMapper.readValue(JsonReadingAndWriting.class.getResourceAsStream("/currency_details.json"),type);
     currencyData.entrySet().forEach(ele->{
       System.out.println(ele.getValue() instanceof  CurrencyDetails);
-    });
 
+
+    });
+    List<Player> list = CsvReaderUtil.loadDataFromCsv();
+    objectMapper.writeValue(new File("player.json"),list);
   }
 }
