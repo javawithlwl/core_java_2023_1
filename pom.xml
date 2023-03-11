@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>iplstats-jdbc</module>
+        <module>core-java</module>
     </modules>
 
     <properties>
