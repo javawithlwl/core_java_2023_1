@@ -14,4 +14,5 @@ public class RoleStatDto {
       private int count;
       private double minAmount;
       private double maxAmount;
+      private double avgAmount;
 }

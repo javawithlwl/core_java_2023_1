@@ -37,7 +37,31 @@ public class IplStatDaoImpl implements IplStatDao {
 
   @Override
   public List<TeamStatDto> selectTeamStats() {
-    return null;
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    List<TeamStatDto> list = new ArrayList<>();
+    try {
+      con = ConnectionUtil.getConnection();
+      st = con.createStatement();
+      rs = st.executeQuery(IplStatQuery.GET_TEAM_STATS);
+      while (rs.next()) {
+        TeamStatDto teamStatDto = TeamStatDto.builder()
+            .team(rs.getString("team"))
+            .minAmount(rs.getDouble("min_amount"))
+            .maxAmount(rs.getDouble("max_amount"))
+            .count(rs.getInt("count"))
+            .totalAmount(rs.getDouble("total_amount"))
+            .avgAmount(rs.getDouble("avg_amount"))
+            .build();
+        list.add(teamStatDto);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      ConnectionUtil.close(rs, st, con);
+    }
+    return list;
   }
 
   @Override

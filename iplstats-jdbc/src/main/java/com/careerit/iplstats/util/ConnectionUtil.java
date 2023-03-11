@@ -13,6 +13,7 @@ public final class ConnectionUtil {
     try {
       properties.load(ConnectionUtil.class.getResourceAsStream("/db.properties"));
     } catch (IOException e) {
+      e.printStackTrace();
       throw new RuntimeException(e);
     }
   }

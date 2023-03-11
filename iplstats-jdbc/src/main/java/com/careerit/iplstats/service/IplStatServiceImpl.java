@@ -23,7 +23,7 @@ public class IplStatServiceImpl implements  IplStatService{
 
   @Override
   public List<TeamStatDto> getTeamStats() {
-    return null;
+    return iplStatDao.selectTeamStats();
   }
 
   @Override
