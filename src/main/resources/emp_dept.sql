@@ -109,4 +109,3 @@ Practice Questions:
 43.	Display the details of the nth highest paid employee.
 44.	Display the details of the highest paid employee from each department.
 45.	Display the details of the senior-most employee of each department.
-
