@@ -1,0 +1,1 @@
+create table contact(id serial,name varchar(250),email varchar(250),mobile varchar(10), status boolean default false);
