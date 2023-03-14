@@ -64,9 +64,7 @@ public class ContactServiceImpl implements ContactService {
     List<Contact> contacts = contactDao.selectAllContacts();
     String[] headings = new String[]{"Id", "Name", "Email", "Mobile", "Status"};
     String[] headingKeys = new String[]{"cid", "name", "email", "mobile", "status"};
-
     String tempPath = System.getProperty("java.io.tmpdir") + System.currentTimeMillis() + "_contact.csv";
-
     CsvExporter csvExporter = new CsvExporter(tempPath, headings, headingKeys);
     ObjectMapper objectMapper = new ObjectMapper();
     for (Contact contact : contacts) {
