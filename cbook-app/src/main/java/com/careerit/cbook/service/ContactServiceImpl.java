@@ -3,11 +3,10 @@ package com.careerit.cbook.service;
 import com.careerit.cbook.dao.ContactDao;
 import com.careerit.cbook.dao.ContactDaoImpl;
 import com.careerit.cbook.domain.Contact;
-import com.careerit.cbook.util.CsvExporter;
+import com.careerit.cbook.util.CsvUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -65,7 +64,7 @@ public class ContactServiceImpl implements ContactService {
     String[] headings = new String[]{"Id", "Name", "Email", "Mobile", "Status"};
     String[] headingKeys = new String[]{"cid", "name", "email", "mobile", "status"};
     String tempPath = System.getProperty("java.io.tmpdir") + System.currentTimeMillis() + "_contact.csv";
-    CsvExporter csvExporter = new CsvExporter(tempPath, headings, headingKeys);
+    CsvUtil csvExporter = new CsvUtil(tempPath, headings, headingKeys);
     ObjectMapper objectMapper = new ObjectMapper();
     for (Contact contact : contacts) {
       System.out.println(contact);

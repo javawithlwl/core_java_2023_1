@@ -7,13 +7,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class CsvExporter {
+public class CsvUtil {
 
     private CsvMapWriter csvMapWriter;
     private String[] headings;
     private String[] headingKeys;
 
-    public CsvExporter(String fileName,String[] headings,String[] headingKeys){
+    public CsvUtil(String fileName, String[] headings, String[] headingKeys){
         try {
             csvMapWriter = new CsvMapWriter(new FileWriter(fileName), CsvPreference.STANDARD_PREFERENCE);
             this.headings = headings;

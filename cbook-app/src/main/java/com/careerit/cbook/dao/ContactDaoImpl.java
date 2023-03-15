@@ -4,6 +4,7 @@ import com.careerit.cbook.dao.util.ConnectionUtil;
 import com.careerit.cbook.domain.Contact;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactDaoImpl implements ContactDao {
@@ -34,7 +35,24 @@ public class ContactDaoImpl implements ContactDao {
 
   @Override
   public int insertContacts(List<Contact> contacts) {
-    return 0;
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    int[] res=null;
+    try {
+      con = ConnectionUtil.getConnection();
+      pst = con.prepareStatement("insert into contact(name,email,mobile) values(?,?,?)", Statement.RETURN_GENERATED_KEYS);
+      for(Contact contact:contacts) {
+        pst.setString(1, contact.getName());
+        pst.setString(2, contact.getEmail());
+        pst.setString(3, contact.getMobile());
+        pst.addBatch();
+      }
+      res = pst.executeBatch();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return res.length;
   }
 
   @Override
@@ -44,7 +62,32 @@ public class ContactDaoImpl implements ContactDao {
 
   @Override
   public List<Contact> selectAllContacts() {
-    return null;
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    List<Contact> list = new ArrayList<>();
+    try {
+      con = ConnectionUtil.getConnection();
+      pst = con.prepareStatement("select id,name,email,mobile,status from contact where status = false");
+      rs = pst.executeQuery();
+      while(rs.next()){
+          int id = rs.getInt("id");
+          String name = rs.getString("name");
+          String email = rs.getString("email");
+          String mobile = rs.getString("mobile");
+          boolean status = rs.getBoolean("status");
+          Contact contact = new Contact();
+          contact.setCid(id);
+          contact.setName(name);
+          contact.setMobile(mobile);
+          contact.setEmail(email);
+          contact.setStatus(status);
+          list.add(contact);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return list;
   }
 
   @Override
