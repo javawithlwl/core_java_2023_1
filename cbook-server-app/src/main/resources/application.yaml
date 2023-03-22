@@ -8,3 +8,4 @@ spring:
 server:
   servlet:
     context-path: /cbook
+  port: 8081

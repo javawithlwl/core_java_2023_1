@@ -84,6 +84,7 @@ public class ContactServiceImpl implements ContactService {
     if(optContact.isPresent()){
         contactRepo.deleteById(id);
         log.info("Contact with id {} deleted",id);
+        return true;
     }
     log.error("Contact with id {} is not found ",id);
     throw new ContactNotFoundException("Contact not found with given id :"+id,ErrorCodes.NOT_FOUND);

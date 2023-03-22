@@ -12,6 +12,7 @@
         <module>iplstats-jdbc</module>
         <module>core-java</module>
         <module>cbook-app</module>
+        <module>spring-core-jdbc</module>
 
     </modules>
 
